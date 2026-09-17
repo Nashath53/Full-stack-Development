@@ -30,11 +30,20 @@
   // ---- Active layer highlight on scroll ----
   const sections = document.querySelectorAll('main section[id]');
   const links = document.querySelectorAll('.layer-link');
+  const skillFills = document.querySelectorAll('.skill-fill');
+  skillFills.forEach(fill => {
+    fill.style.setProperty('--skill-level', fill.style.width);
+    if (reduceMotion) fill.classList.add('is-visible');
+  });
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if(entry.isIntersecting){
         links.forEach(l => l.classList.remove('active'));
         document.querySelectorAll(`.layer-link[href="#${entry.target.id}"]`).forEach(l => l.classList.add('active'));
+        if (entry.target.id === 'about' && !reduceMotion) {
+          skillFills.forEach(fill => fill.classList.add('is-visible'));
+        }
       }
     });
   }, { rootMargin: '-40% 0px -50% 0px' });

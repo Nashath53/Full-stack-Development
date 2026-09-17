@@ -401,8 +401,21 @@ body.dark .darkest{
   overflow: hidden;
 }
 .skill-fill {
+  display: block;
+  width: 0 !important;
   height: 100%;
   background: linear-gradient(to left, var(--blue),var(--paper-2));
+  transition: width 0.9s ease-out;
+}
+
+.skill-fill.is-visible {
+  width: var(--skill-level) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-fill {
+    transition: none;
+  }
 }
 
 .skill-pct {
