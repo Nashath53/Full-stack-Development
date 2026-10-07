@@ -64,13 +64,72 @@
 
 
 
-let user = "sparrow";
-let password = "2005";
+// let user = "sparrow";
+// let password = "2005";
 
-if (user === "sparrow" && password === "2005") {
-    console.log("Login successfully");
-}
-else {
-    console.log("Invalid username or password");
-}
+// if (user === "sparrow" && password === "2005") {
+//     console.log("Login successfully");
+// }
+// else {
+//     console.log("Invalid username or password");
+// }
 
+
+
+// let students=["s","e","h",""];
+
+// students.push("d","z");
+// students.push("x","");
+
+
+
+
+
+
+// // console.log(students[3]);
+// // console.log("we have " + students.length);
+// console.log(`we have ${students.length} students`);
+// console.log(students);
+
+
+
+// function greeting(name){
+//     console.log(`hi ${name}`)
+// }
+
+
+// greeting("sparrow");
+// greeting("");
+// greeting();
+
+// function greeting(name1,name2){
+//     console.log(`hi ${name1} ${name2}`)
+// }
+
+
+// greeting("sparrow");
+// greeting("");
+// greeting();
+
+
+// function greeting(name1,name2){
+//     let addition = name1 + name2 ;
+//     console.log(addition);
+// }
+
+
+// greeting(50,10);
+
+
+// function greeting(name1,name2){
+// console.log(`${name1 , name2}`);
+// }
+
+// greeting(50,10);
+
+let file=["s","g","r","w"];
+file.forEach(function(element,index){
+    
+ console.log(`${element} ${++index}`);   
+}
+)
