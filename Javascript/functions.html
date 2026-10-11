@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="box"></div>
+  
+    <button onclick="change()">Click</button>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition: 2s;
+
+        }
+        .width{
+            width: 200px;
+            height: 100px;
+            background-color: rgb(0, 255, 149);
+        }
+
+    </style>
+    <script>
+        let box = document.querySelector(".box");
+
+        function change(){
+          box.classList.add("width")            //  box.setAttribute("class","width")
+        }
+    </script>
+    
+</body>
+</html>

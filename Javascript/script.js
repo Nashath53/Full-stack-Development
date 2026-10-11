@@ -127,9 +127,20 @@
 
 // greeting(50,10);
 
-let file=["s","g","r","w"];
-file.forEach(function(element,index){
+// let file=["s","g","r","w"];
+// file.forEach(function(element,index){
     
- console.log(`${element} ${++index}`);   
-}
-)
+//  console.log(`${element} ${++index}`);   
+// }
+// )
+
+// let x = 5;
+// console.log(++x);
+// console.log(x++);
+// console.log(x);
+
+
+
+let file=["s","g","r","w"];
+file.splice(1,2); 
+console.log(file)//  ['s', 'w']
