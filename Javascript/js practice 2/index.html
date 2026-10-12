@@ -1,0 +1,37 @@
+
+<h1>Guess the number 1 - 10 and win</h1>
+<input type="number" id="inputbox">
+<button onclick="change()">check</button>
+<p id="result">you are wrong/right</p>
+<p id="score">score:10</p>
+
+<script>
+    var inputbox =document.getElementById("inputbox")
+    var result = document.getElementById("result")
+    var randomnumber = Math.floor(Math.random()*10)+1
+    var totalscore =10
+    var score = document.getElementById("score")
+
+    function change()
+    {
+        var enterednumber = inputbox.value
+        if(randomnumber==enterednumber)
+    {
+        console.log("right")
+        result.textContent="You are right"
+        totalscore=totalscore+1
+        score.textContent="score:"+totalscore
+
+
+    }
+    else{
+        totalscore =totalscore-1
+        score.textContent="score:"+totalscore
+        console.log("wrong")
+        result.textContent="You are wrong"
+        
+    }
+    }
+
+</script>
+
