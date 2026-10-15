@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist with jquery</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2;
+            
+        }
+        .container{
+            width: 400px;
+            place-content: center;
+            margin: 0 auto;
+            background-color: #200d0d;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            color: white;
+            text-align: center;
+        }
+        input[type=text]{
+            padding: 10px;
+            width: 300px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px;
+        }
+        button{
+            margin-top: 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #45a049;
+        }
+        .remove{
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        ul{
+            list-style-type: none;
+            padding: 0;
+        }
+        li{
+            padding: 10px;
+            width: 80%;
+            background-color: rgba(36, 27, 27, 0.945);
+            margin-bottom: 5px;
+            border-radius: 5px;
+            border: 1px solid #fff;
+            display: inline-flex;
+            justify-content:space-between; ;
+            align-items: center;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+
+    <h1>Todolist</h1>
+    <input type="text" id="input_content" placeholder="Enter a task">
+    <button id="add_task">Add Task</button>
+    <h3>Task List</h3>
+    <ul id="list">
+    </ul>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            
+            $('#add_task').click(function()
+            {
+                var task = $('#input_content').val();
+                
+                
+                if(task){
+                    $('#list').prepend('<li>' + task + ' <button class="remove">Delete</button>' + '</li>');
+                    $('#input_content').val('');
+
+                    $('.remove').click(function(){
+                      $('this.parent').remove();
+                    })
+                }
+                
+            });
+            
+        
+
+            
+           
+        });
+    </script>
+</body>
+</html>
