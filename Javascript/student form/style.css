@@ -1,0 +1,86 @@
+body{
+  background-blend-mode: color;
+}
+.container{
+  justify-content: center;
+  background-color: #66ebce63;
+  width: 300px;
+  height: 270px;
+  margin: auto;
+  margin-top: 0px;
+  padding: 50px;
+  padding-top: 5px;
+  border-radius: 10px;
+  
+  
+  
+  
+
+}
+h1{
+  text-align: center;
+  margin-top: 0%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+label{
+  display: inline-block;
+  width: 70px;
+  height: 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  
+
+}
+.savebtn{
+  margin-left: 10px;
+  display: inline-block;
+  width: 280px;
+  padding: 10px;
+  margin-top: 30px;
+  background-color: rgb(215, 250, 244);
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bolder;
+  
+}
+.savebtn:hover{
+  background-color: rgba(4, 253, 178, 0.712);
+  color: rgb(0, 0, 0);
+  
+}
+th,td{
+      border:2px solid #05b8ff;
+      padding: 6px;
+      text-align: center;
+      
+                   
+
+}
+table{
+   margin: 20px auto;
+      border-collapse: collapse;
+      width: 90%;
+      
+}
+
+  .deletebtn{
+
+    background-color: rgba(0, 255, 255, 0.322);
+    border-radius: 7px;
+    border: none;
+    border-bottom: solid black;
+    
+  }
+
+  .deletebtn:hover{
+    background-color: rgb(2, 196, 255);
+  }
+  
+  .error {
+  color: red;
+  font-size: 12px;
+  display: block;
+  margin-bottom: 5px;
+}
