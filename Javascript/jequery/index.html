@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todolist with jquery</title>
+    <title>ToDo List with jQuery</title>
     <script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
     <style>
         body{
@@ -39,7 +39,7 @@
             cursor: pointer;
         }
         button:hover{
-            background-color: #45a049;
+            background-color: #1b5a1e;
         }
         .remove{
             background-color: red;
@@ -49,20 +49,38 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        .remove:hover{
+            background-color: #7a1717;
+        }
+        .edit{
+            background-color: rgb(49, 86, 165);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .edit:hover{
+            background-color:rgb(32, 65, 136);
+        }
         ul{
             list-style-type: none;
             padding: 0;
         }
         li{
             padding: 10px;
-            width: 80%;
+            width: 90%;
             background-color: rgba(36, 27, 27, 0.945);
             margin-bottom: 5px;
             border-radius: 5px;
             border: 1px solid #fff;
             display: inline-flex;
-            justify-content:space-between; ;
+            justify-content:space-between;
             align-items: center;
+        }
+        li div{
+            display: flex;
+            gap: 10px;
         }
         
         
@@ -71,7 +89,7 @@
 <body>
     <div class="container">
 
-    <h1>Todolist</h1>
+    <h1>ToDo List</h1>
     <input type="text" id="input_content" placeholder="Enter a task">
     <button id="add_task">Add Task</button>
     <h3>Task List</h3>
@@ -81,27 +99,35 @@
     
     <script>
         $(document).ready(function(){
-            
-            $('#add_task').click(function()
-            {
-                var task = $('#input_content').val();
-                
-                
+
+            var remove_item = '<button class="remove">Delete</button>';
+            var edit_item = '<button class="edit">Edit</button>';
+
+            $('#add_task').click(function(){
+                var task = $('#input_content').val().trim();
+
                 if(task){
-                    $('#list').prepend('<li>' + task + ' <button class="remove">Delete</button>' + '</li>');
+                    $('#list').prepend(
+                        '<li><span>' + task + '</span><div>' +
+                        edit_item + remove_item + '</div></li>'
+                    );
                     $('#input_content').val('');
-
-                    $('.remove').click(function(){
-                      $('this.parent').remove();
-                    })
                 }
-                
             });
-            
-        
 
-            
-           
+            $('#list').on('click', '.remove', function(){ 
+                
+                $(this).closest('li').remove();
+            });
+
+            $('#list').on('click', '.edit', function(){
+                var taskText = $(this).closest('li').children('span').first();
+                var updatedTask = prompt('Edit task:', taskText.text());
+
+                if(updatedTask !== null && updatedTask.trim() !== ''){
+                    taskText.text(updatedTask.trim());
+                }
+            });
         });
     </script>
 </body>
